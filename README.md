@@ -19,6 +19,23 @@ Some query examples.
 
 * 3a. You want to keep a description of each actor. You don't think you will be performing queries on a description, so create a column in the table `actor` named `description` and use the data type `BLOB` (Make sure to research the type `BLOB`, as the difference between it and `VARCHAR` are significant).
 
+According to Ozair Kafray @ [Stackexchange.com](https://softwareengineering.stackexchange.com/questions/154786/is-a-blob-more-efficient-than-a-varchar-for-data-that-can-be-any-size)
+
+```md
+I would suggest using TEXT over BLOB.
+
+Primary Difference
+
+- TEXT and BLOB is stored off the table with the table just having a pointer to the location of the actual storage.
+- VARCHAR is stored inline with the table.
+
+Primary Guideline
+
+1. Text format messages should almost always be stored as TEXT (they end up being arbitrarily long)
+2. String attributes should be stored as VARCHAR (the destination user name, the subject, etc...).
+```
+
+
 * 3b. Very quickly you realize that entering descriptions for each actor is too much effort. Delete the `description` column.
 
 * 4a. List the last names of actors, as well as how many actors have that last name.
@@ -32,6 +49,25 @@ Some query examples.
 * 5a. You cannot locate the schema of the `address` table. Which query would you use to re-create it?
 
   * Hint: [https://dev.mysql.com/doc/refman/5.7/en/show-create-table.html](https://dev.mysql.com/doc/refman/5.7/en/show-create-table.html)
+
+Result:
+```sql
+CREATE TABLE `address` (
+  `address_id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `address` varchar(50) NOT NULL,
+  `address2` varchar(50) DEFAULT NULL,
+  `district` varchar(20) NOT NULL,
+  `city_id` smallint(5) unsigned NOT NULL,
+  `postal_code` varchar(10) DEFAULT NULL,
+  `phone` varchar(20) NOT NULL,
+  `location` geometry NOT NULL,
+  `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`address_id`),
+  KEY `idx_fk_city_id` (`city_id`),
+  SPATIAL KEY `idx_location` (`location`),
+  CONSTRAINT `fk_address_city` FOREIGN KEY (`city_id`) REFERENCES `city` (`city_id`) ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=606 DEFAULT CHARSET=utf8
+```
 
 * 6a. Use `JOIN` to display the first and last names, as well as the address, of each staff member. Use the tables `staff` and `address`:
 
