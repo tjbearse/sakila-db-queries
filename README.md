@@ -2,9 +2,7 @@
 Query examples
 ---
 
-## Instructions
-
-### 1a. Display the first and last names of all actors from the table `actor`.
+#### 1a. Display the first and last names of all actors from the table `actor`.
 
 Query: 
 ```sql
@@ -15,7 +13,7 @@ Result:
 
   ![image](output_screenshots/1a.png)
 
-### 1b. Display the first and last name of each actor in a single column in upper case letters. Name the column `Actor Name`.
+#### 1b. Display the first and last name of each actor in a single column in upper case letters. Name the column `Actor Name`.
 
 Query:
 ```sql
@@ -26,7 +24,7 @@ Result:
 
   ![image](output_screenshots/1b.png)
 
-### 2a. You need to find the ID number, first name, and last name of an actor, of whom you know only the first name, "Joe." What is one query would you use to obtain this information?
+#### 2a. You need to find the ID number, first name, and last name of an actor, of whom you know only the first name, "Joe." What is one query would you use to obtain this information?
 
 Query: 
 ```sql
@@ -38,7 +36,7 @@ Result:
 
   ![image](output_screenshots/2a.png)
 
-### 2b. Find all actors whose last name contain the letters `GEN`:
+#### 2b. Find all actors whose last name contain the letters `GEN`:
 
 Query: 
 ```sql
@@ -50,7 +48,7 @@ Result:
 
   ![image](output_screenshots/2b.png)
 
-### 2c. Find all actors whose last names contain the letters `LI`. This time, order the rows by last name and first name, in that order:
+#### 2c. Find all actors whose last names contain the letters `LI`. This time, order the rows by last name and first name, in that order:
 
 Query: 
 ```sql
@@ -63,7 +61,7 @@ Result:
 
   ![image](output_screenshots/2c.png)
 
-### 2d. Using `IN`, display the `country_id` and `country` columns of the following countries: Afghanistan, Bangladesh, and China:
+#### 2d. Using `IN`, display the `country_id` and `country` columns of the following countries: Afghanistan, Bangladesh, and China:
 
 Query: 
 ```sql
@@ -75,7 +73,7 @@ Result:
 
   ![image](output_screenshots/2d.png)
 
-### 3a. You want to keep a description of each actor. You don't think you will be performing queries on a description, so create a column in the table `actor` named `description` and use the data type `BLOB` (Make sure to research the type `BLOB`, as the difference between it and `VARCHAR` are significant).
+#### 3a. You want to keep a description of each actor. You don't think you will be performing queries on a description, so create a column in the table `actor` named `description` and use the data type `BLOB` (Make sure to research the type `BLOB`, as the difference between it and `VARCHAR` are significant).
 
 According to Ozair Kafray @ [Stackexchange.com](https://softwareengineering.stackexchange.com/questions/154786/is-a-blob-more-efficient-than-a-varchar-for-data-that-can-be-any-size)
 
@@ -106,7 +104,7 @@ Result:
 
   ![image](output_screenshots/3a.png)
 
-### 3b. Very quickly you realize that entering descriptions for each actor is too much effort. Delete the `description` column.
+#### 3b. Very quickly you realize that entering descriptions for each actor is too much effort. Delete the `description` column.
 
 Query: 
 ```sql
@@ -121,7 +119,7 @@ Result:
 
   ![image](output_screenshots/3b.png)
 
-### 4a. List the last names of actors, as well as how many actors have that last name.
+#### 4a. List the last names of actors, as well as how many actors have that last name.
 
 Query: 
 ```sql
@@ -134,7 +132,7 @@ Result:
 
   ![image](output_screenshots/4a.png)
 
-### 4b. List last names of actors and the number of actors who have that last name, but only for names that are shared by at least two actors
+#### 4b. List last names of actors and the number of actors who have that last name, but only for names that are shared by at least two actors
 
 Query: 
 ```sql
@@ -148,7 +146,7 @@ Result:
 
   ![image](output_screenshots/4b.png)
 
-### 4c. The actor `HARPO WILLIAMS` was accidentally entered in the `actor` table as `GROUCHO WILLIAMS`. Write a query to fix the record.
+#### 4c. The actor `HARPO WILLIAMS` was accidentally entered in the `actor` table as `GROUCHO WILLIAMS`. Write a query to fix the record.
 
 Query: 
 ```sql
@@ -162,7 +160,7 @@ Result:
 
   ![image](output_screenshots/4c.png)
 
-### 4d. Perhaps we were too hasty in changing `GROUCHO` to `HARPO`. It turns out that `GROUCHO` was the correct name after all! In a single query, if the first name of the actor is currently `HARPO`, change it to `GROUCHO`.
+#### 4d. Perhaps we were too hasty in changing `GROUCHO` to `HARPO`. It turns out that `GROUCHO` was the correct name after all! In a single query, if the first name of the actor is currently `HARPO`, change it to `GROUCHO`.
 
 Query: 
 ```sql
@@ -174,7 +172,7 @@ Result:
 
   ![image](output_screenshots/4d.png)
 
-### 5a. You cannot locate the schema of the `address` table. Which query would you use to re-create it?
+#### 5a. You cannot locate the schema of the `address` table. Which query would you use to re-create it?
 
 
 Query: 
@@ -206,7 +204,7 @@ CREATE TABLE `address` (
 ```
 
 
-### 6a. Use `JOIN` to display the first and last names, as well as the address, of each staff member. Use the tables `staff` and `address`:
+#### 6a. Use `JOIN` to display the first and last names, as well as the address, of each staff member. Use the tables `staff` and `address`:
 
 Query: 
 ```sql
@@ -219,7 +217,7 @@ Result:
 
   ![image](output_screenshots/6a.png)
 
-### 6b. Use `JOIN` to display the total amount rung up by each staff member in August of 2005. Use tables `staff` and `payment`.
+#### 6b. Use `JOIN` to display the total amount rung up by each staff member in August of 2005. Use tables `staff` and `payment`.
 
 Query: 
 ```sql
@@ -235,7 +233,7 @@ Result:
 
   ![image](output_screenshots/6b.png)
 
-### 6c. List each film and the number of actors who are listed for that film. Use tables `film_actor` and `film`. Use inner join.
+#### 6c. List each film and the number of actors who are listed for that film. Use tables `film_actor` and `film`. Use inner join.
 
 Query: 
 ```sql
@@ -250,7 +248,7 @@ Result:
 
   ![image](output_screenshots/6c.png)
 
-### 6d. How many copies of the film `Hunchback Impossible` exist in the inventory system?
+#### 6d. How many copies of the film `Hunchback Impossible` exist in the inventory system?
 
 Query: 
 ```sql
@@ -265,7 +263,7 @@ Result:
 
   ![image](output_screenshots/6d.png)
 
-### 6e. Using the tables `payment` and `customer` and the `JOIN` command, list the total paid by each customer. List the customers alphabetically by last name:
+#### 6e. Using the tables `payment` and `customer` and the `JOIN` command, list the total paid by each customer. List the customers alphabetically by last name:
 
 Query: 
 ```sql
@@ -281,7 +279,7 @@ Result:
   ![image](output_screenshots/6e.png)
 
 
-### 7a. The music of Queen and Kris Kristofferson have seen an unlikely resurgence. As an unintended consequence, films starting with the letters `K` and `Q` have also soared in popularity. Use subqueries to display the titles of movies starting with the letters `K` and `Q` whose language is English.
+#### 7a. The music of Queen and Kris Kristofferson have seen an unlikely resurgence. As an unintended consequence, films starting with the letters `K` and `Q` have also soared in popularity. Use subqueries to display the titles of movies starting with the letters `K` and `Q` whose language is English.
 
 Query: 
 ```sql
@@ -299,7 +297,7 @@ Result:
 
   ![image](output_screenshots/7a.png)
 
-### 7b. Use subqueries to display all actors who appear in the film `Alone Trip`.
+#### 7b. Use subqueries to display all actors who appear in the film `Alone Trip`.
 
 Query: 
 ```sql
@@ -317,7 +315,7 @@ Result:
 
   ![image](output_screenshots/7b.png)
 
-### 7c. You want to run an email marketing campaign in Canada, for which you will need the names and email addresses of all Canadian customers. Use joins to retrieve this information.
+#### 7c. You want to run an email marketing campaign in Canada, for which you will need the names and email addresses of all Canadian customers. Use joins to retrieve this information.
 
 Query: 
 ```sql
@@ -354,7 +352,7 @@ Result:
 
   ![image](output_screenshots/7c.png)
 
-### 7d. Sales have been lagging among young families, and you wish to target all family movies for a promotion. Identify all movies categorized as _family_ films.
+#### 7d. Sales have been lagging among young families, and you wish to target all family movies for a promotion. Identify all movies categorized as _family_ films.
 
 Query: 
 ```sql
@@ -374,7 +372,7 @@ Result:
 
   ![image](output_screenshots/7d.png)
 
-### 7e. Display the most frequently rented movies in descending order.
+#### 7e. Display the most frequently rented movies in descending order.
 
 Query: 
 ```sql
@@ -394,7 +392,7 @@ Result:
 
   ![image](output_screenshots/7e.png)
 
-### 7f. Write a query to display how much business, in dollars, each store brought in.
+#### 7f. Write a query to display how much business, in dollars, each store brought in.
 
 Query: 
 ```sql
@@ -414,7 +412,7 @@ Result:
 
   ![image](output_screenshots/7f.png)
 
-### 7g. Write a query to display for each store its store ID, city, and country.
+#### 7g. Write a query to display for each store its store ID, city, and country.
 
 Query: 
 ```sql
@@ -443,7 +441,7 @@ Result:
 
   ![image](output_screenshots/7g.png)
 
-### 7h. List the top five genres in gross revenue in descending order. (**Hint**: you may need to use the following tables: category, film_category, inventory, payment, and rental.)
+#### 7h. List the top five genres in gross revenue in descending order. (**Hint**: you may need to use the following tables: category, film_category, inventory, payment, and rental.)
 
 Query: 
 ```sql
@@ -467,7 +465,7 @@ Result:
 
   ![image](output_screenshots/7h.png)
 
-### 8a. In your new role as an executive, you would like to have an easy way of viewing the Top five genres by gross revenue. Use the solution from the problem above to create a view. If you haven't solved 7h, you can substitute another query to create a view.
+#### 8a. In your new role as an executive, you would like to have an easy way of viewing the Top five genres by gross revenue. Use the solution from the problem above to create a view. If you haven't solved 7h, you can substitute another query to create a view.
 
 Query: 
 ```sql
@@ -489,7 +487,7 @@ order by revenue desc
 limit 5;
 ```
 
-### 8b. How would you display the view that you created in 8a?
+#### 8b. How would you display the view that you created in 8a?
 
 Query: 
 ```sql
@@ -499,7 +497,7 @@ Result:
 
   ![image](output_screenshots/8b.png)
 
-### 8c. You find that you no longer need the view `top_five_genres`. Write a query to delete it.
+#### 8c. You find that you no longer need the view `top_five_genres`. Write a query to delete it.
 
 Query: 
 ```sql
